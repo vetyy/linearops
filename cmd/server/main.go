@@ -89,7 +89,9 @@ func main() {
 	}
 
 	r := chi.NewRouter()
-	r.Use(middleware.Logger)
+	if log.GetLevel() == log.DebugLevel {
+		r.Use(middleware.Logger)
+	}
 	r.Use(middleware.Heartbeat("/health"))
 	r.Use(cors.Handler(cors.Options{
 		AllowedOrigins:   []string{"*"},
@@ -101,7 +103,7 @@ func main() {
 	}))
 
 	r.Route(viper.GetString(configBindURLPrefix), func(r chi.Router) {
-		r.Post(fmt.Sprintf("/%s", viper.GetString(configLinearWebhookID)), serverService.LinearWebhook)
+		r.Post(fmt.Sprintf("/webhook/%s", viper.GetString(configLinearWebhookID)), serverService.LinearWebhook)
 		r.Get("/on-call/{schedule_id}", serverService.OnCallSchedule)
 	})
 

@@ -19,3 +19,6 @@ vendor/
 
 # Build file
 server
+
+# Env file
+.env

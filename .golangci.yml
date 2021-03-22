@@ -1,0 +1,42 @@
+run:
+  deadline: 5m
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - deadcode
+    - dupl
+    - goconst
+    # - gocyclo
+    - gofmt
+    - goimports
+    - golint
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - nakedret
+    - staticcheck
+    - structcheck
+    # stylecheck demands that acronyms not be treated as words
+    # in camelCase, so JsonOp become JSONOp, etc.  Yuck.
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unused
+    - unparam
+    - varcheck
+
+linters-settings:
+  dupl:
+    threshold: 400
+  lll:
+    line-length: 170
+  gocyclo:
+    min-complexity: 15
+  golint:
+    min-confidence: 0.85
+
