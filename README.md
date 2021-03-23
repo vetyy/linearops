@@ -5,7 +5,7 @@ to trigger OpsGenie [Alerts](https://docs.opsgenie.com/docs/alerts-and-alert-fie
 
 ## Overview
 
-Linearops listens on `<bind.URL.Prefix>/webhook/<lienar.Webhook.ID>` for
+Linearops listens on `<bind.URL.Prefix>/webhook/<linear.Webhook.ID>` for
 example `/linearops/webhook/419cfbaf-b98d-481b-9ad7-661eb432bdbf`.
 Linear currently doesn't support any form of authentication, so you can use random webhook ID to get unique URL.
 
@@ -41,7 +41,7 @@ Healthcheck - `/health` returns:
 200 OK.
 ```
 
-Linear Webhook - `<bind.URL.Prefix>/webhook/<lienar.Webhook.ID>` for
+Linear Webhook - `<bind.URL.Prefix>/webhook/<linear.Webhook.ID>` for
 example `/linearops/webhook/419cfbaf-b98d-481b-9ad7-661eb432bdbf` returns:
 
 ```
