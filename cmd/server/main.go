@@ -24,7 +24,7 @@ const (
 	configBindHTTP      = "bind.HTTP"
 	configBindURLPrefix = "bind.URL.Prefix"
 
-	configOpsGenieAPIKey     = "opsGenie.API.Key"
+	configOpsGenieAPIKey     = "opsGenie.API.Key"  //nolint:all
 	configOpsGenieResponders = "opsGenie.Responders"
 
 	configLinearWebhookID       = "linear.Webhook.ID"
@@ -112,7 +112,7 @@ func main() {
 	go func() {
 		bindHTTP := viper.GetString(configBindHTTP)
 		log.Infof("Running server at: %s", bindHTTP)
-		if err = http.ListenAndServe(bindHTTP, r); err != nil {
+		if err = http.ListenAndServe(bindHTTP, r); err != nil {  //nolint:all
 			log.Fatalf("failed to run HTTP server: %v", err)
 		}
 		wg.Done()
