@@ -66,7 +66,7 @@ func (s *Service) CreateAlert(ctx context.Context, id string, title string, desc
 			"url": url,
 		},
 		Alias:    id,
-		Priority: alert.P3,
+		Priority: alert.P1,
 		User:     s.LinearUserAgent,
 	})
 	return err
